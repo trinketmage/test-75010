@@ -18,6 +18,8 @@ import Draggable from "@gsap/shockingly/Draggable";
 import ScrollTrigger from "@gsap/shockingly/ScrollTrigger";
 import { ref, onMounted, onUnmounted } from "vue";
 
+import normalizeWheel from "@/pure/NormalizeWheel";
+
 export default {
     props: {
         movies: {
@@ -35,6 +37,7 @@ export default {
         var wrapWidth = 0;
         var snapBox = null;
         var animation = null;
+        var overrideAnimation = null;
         var updateProgress = null;
         var draggable = null;
 
@@ -75,6 +78,11 @@ export default {
             draggable = Draggable.create(proxy, {
                 trigger: wrapper.value,
                 throwProps: true,
+                onPressInit: () => {
+                    if (overrideAnimation) {
+                        overrideAnimation.kill();
+                    }       
+                },
                 onDrag: updateProgress,
                 onThrowUpdate: updateProgress,
                 snap: {
@@ -82,10 +90,38 @@ export default {
                 }
             });
         }
+        let wheelEventEndTimeout = null;
+
+        const handleWheel = (e) => {
+            const ne = normalizeWheel(e);
+            const { pixelX, pixelY } = ne;
+            const delta = pixelX;
+            clearTimeout(wheelEventEndTimeout);
+            if (overrideAnimation) {
+                overrideAnimation.kill();
+            }
+            if (Math.abs(pixelX) > Math.abs(pixelY)) {
+                e.preventDefault();
+                gsap.set(proxy, { x: proxyProps("x") - delta });
+                animation.progress(wrapProgress(proxyProps("x") / wrapWidth));
+                wheelEventEndTimeout = setTimeout(() => {
+                    const nx = snapBox(proxyProps("x"));
+                    overrideAnimation = gsap.to(proxy, {
+                        x: nx,
+                        duration: (Math.abs(nx - proxyProps("x")) / boxWidth) * 0.5, 
+                        ease: "sine.out",
+                        onUpdate: () => {
+                            animation.progress(wrapProgress(proxyProps("x") / wrapWidth));
+
+                        }
+                    })
+                }, 100);
+            }
+        }
         onMounted(() => {
             handleResize();
             ScrollTrigger.addEventListener('refreshInit', handleResize);
-
+            wrapper.value.addEventListener('wheel', handleWheel, { passive:false });
         });
         onUnmounted(() => {
             ScrollTrigger.removeEventListener('refreshInit', handleResize);

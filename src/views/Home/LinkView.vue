@@ -31,15 +31,26 @@ export default {
 
     onMounted(() => {
       if (view.value) {
-        const animation = gsap.fromTo(
+        const animation = gsap.timeline();
+        animation.fromTo(
           view.value.querySelector(".image-scroller"),
           {
             yPercent: -15
           },
           {
             ease: "linear",
+            duration: 1,
             yPercent: 0
           },
+          "a"
+        );
+        animation.from(
+          view.value.querySelector(".details"),
+          {
+            alpha: 0,
+            duration: 0.625
+          },
+          "a+=0.375"
         );
         st = ScrollTrigger.create({
           trigger: view.value,

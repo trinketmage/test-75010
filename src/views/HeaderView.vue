@@ -1,5 +1,5 @@
 <template>
-    <div class="header">
+    <div class="header gabarit">
         <a><RessortGraphique />MENU</a>
         <div class="fast-nav">
             <a>POPULAR</a>
@@ -18,10 +18,6 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-    max-width: var(--gabarit);
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0px 40px;
     height: var(--header-size);
     font-size: 16px;
     display: flex;

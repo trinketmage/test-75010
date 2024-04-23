@@ -84,6 +84,8 @@ export default {
       }, 'a')
       animation.to(circles[1], {
         scale: 1,
+        xPercent: -50,
+        yPercent: -50,
         ease: 'linear',
         duration: 1
       }, 'a')
@@ -95,6 +97,32 @@ export default {
         ease: 'linear',
         duration: 1
       }, 'a')
+      animation.from(thumbs[1], {
+        y: '5vh',
+        rotation: 2,
+        xPercent: 10, 
+        z: -40,
+        ease: 'linear',
+        duration: 1
+      }, 'a')
+
+      animation.fromTo(thumbs[2], {
+        y: '7.5vh',
+        rotation: 0,
+        xPercent: 20, 
+        z: -60,
+        ease: 'linear',
+        duration: 1,
+      }, {
+
+        y: '5vh',
+        rotation: 2,
+        xPercent: 10, 
+        z: -40,
+        ease: 'linear',
+        duration: 1
+      }
+      , 'a')
       animation.from(details[2], {
         alpha: 0.1,
         ease: 'linear',
@@ -102,6 +130,8 @@ export default {
       }, 'a+=1')
       animation.to(circles[2], {
         scale: 1,
+        xPercent: -50,
+        yPercent: -50,
         ease: 'linear',
         duration: 1
       }, 'a+=1')
@@ -110,6 +140,14 @@ export default {
         rotation: 30,
         xPercent: -40, 
         z: 200,
+        ease: 'linear',
+        duration: 1
+      }, 'a+=1')
+      animation.to(thumbs[2], {
+        y: '0vh',
+        rotation: 3.5,
+        xPercent: 0, 
+        z: 0,
         ease: 'linear',
         duration: 1
       }, 'a+=1')
@@ -160,8 +198,8 @@ export default {
   align-items: center;
   justify-content: flex-start;
   height: 100%;
-  margin-right: -65px; //half gutter
-
+  // margin-right: -65px;
+  margin-right: calc(-50vw + 700px);
 }
 .card {
   height: 100vh;
@@ -187,6 +225,7 @@ h3 {
 a {
   font-size: 24px;
   font-weight: bold;
+  cursor: pointer;
 }
 .circle {
   width: calc(hypot(100vh, 100vw ));
@@ -200,7 +239,7 @@ a {
 .thumb {
   position: absolute;
   left: 66.5%;
-  top: 54%;
+  top: 50%;
   transform: translateY(-50%) rotate(3.5deg);
   img {
     transform: translateX(-50%);

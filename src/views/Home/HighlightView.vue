@@ -1,15 +1,17 @@
 <template>
   <div class="view" ref="view">
+    <div
+      class="scroll-helper"
+    >
       <div
-        class="card ghost"
-        v-for="({ id, color }, i) in movies"
+        v-for="({ id, color }) in movies"
         :key="id"
+        class="circle"
         :style="{
-          backgroundColor: color,
-          top: i * 100 + 'vh',
+          backgroundColor: color
         }"
-      ></div>
-    <div class="scroll-helper">
+      >
+      </div>
       <div class="gabarit">
         <div class="wrapper">
           <div
@@ -17,14 +19,6 @@
             :key="id"
             class="details"
           >
-            <!-- <div
-              class="card "
-              v-for="({ id, color, title }) in movies"
-              :key="id"
-              :style="{
-                backgroundColor: color
-              }"
-            > -->
             <h3>{{ title }} <span class="rating">{{ rating }}/10</span></h3>
             <div class="description">{{ description }}</div>
             <a>⭐️ PICK OF THE MONTH</a>
@@ -63,18 +57,32 @@ export default {
       const animation = gsap.timeline();
 
       const details = view.value.querySelectorAll('.details')
+      const circles = view.value.querySelectorAll('.circle')
       animation.to(view.value.querySelector('.wrapper'), {
         xPercent: -200,
         ease: 'linear',
         duration: 2
+      }, 'a')
+      animation.set(circles[0], {
+        scale: 1
       }, 'a')
       animation.from(details[1], {
         alpha: 0.1,
         ease: 'linear',
         duration: 1
       }, 'a')
+      animation.to(circles[1], {
+        scale: 1,
+        ease: 'linear',
+        duration: 1
+      }, 'a')
       animation.from(details[2], {
         alpha: 0.1,
+        ease: 'linear',
+        duration: 1
+      }, 'a+=1')
+      animation.to(circles[2], {
+        scale: 1,
         ease: 'linear',
         duration: 1
       }, 'a+=1')
@@ -88,7 +96,7 @@ export default {
         markers: true,
         snap: {
           snapTo: [0, 0.5, 1],
-          duration: { min: 0.1, max: 1 },
+          duration: { min: 0.1, max: 0.5 },
           delay: 0.0,
           ease: "power1.inOut",
         },
@@ -115,6 +123,7 @@ export default {
 .scroll-helper {
   overflow: hidden;
   height: 100vh;
+  overflow: hidden;
 }
 .gabarit {
   height: 100%;
@@ -132,11 +141,6 @@ export default {
 }
 .details {
   min-width: 100%;
-}
-.ghost {
-  position: absolute;
-  z-index: -1;
-  width: 100%;
 }
 h3 {
   font-size: 64px;
@@ -156,5 +160,14 @@ h3 {
 a {
   font-size: 24px;
   font-weight: bold;
+}
+.circle {
+  width: calc(hypot(100vh, 100vw ));
+  height: calc(hypot(100vh, 100vw ));
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(0);
 }
 </style>

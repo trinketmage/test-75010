@@ -11,6 +11,11 @@
       >
       </div>
     </div>
+    <div class="details">
+      <span class="label">Collection</span>
+      <h2>LE CINÉMA DE DENIS VILLENEUVE</h2>
+      <a>DÉCOUVRIR</a>
+    </div>
   </div>
 </template>
 
@@ -59,13 +64,43 @@ export default {
 <style lang="scss" scoped>
 .view {
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 .image-scroller {
   height: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
 }
 .image-helper {
   height: 100%;
   background-position: 50% 50%;
   background-size: cover;
+}
+.label {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+h2 {
+  max-width: 8em;
+}
+a {
+  font-size: 16px;
+  background-color: var(--white);
+  color: var(--midnight);
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  border-radius: 40px;
+  margin-top: 35px;
+  cursor: pointer;
 }
 </style>

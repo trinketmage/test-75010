@@ -1,11 +1,14 @@
 <template>
-  <div>App</div>
+  <HeaderView />
 </template>
 
 <script>
 
+import HeaderView from "@/views/HeaderView.vue";
+
 export default {
   components: {
+    HeaderView,
   },
 }
 </script>

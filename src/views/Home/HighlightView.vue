@@ -62,11 +62,22 @@ export default {
 
       const animation = gsap.timeline();
 
+      const details = view.value.querySelectorAll('.details')
       animation.to(view.value.querySelector('.wrapper'), {
         xPercent: -200,
         ease: 'linear',
         duration: 2
       }, 'a')
+      animation.from(details[1], {
+        alpha: 0.1,
+        ease: 'linear',
+        duration: 1
+      }, 'a')
+      animation.from(details[2], {
+        alpha: 0.1,
+        ease: 'linear',
+        duration: 1
+      }, 'a+=1')
 
       st = ScrollTrigger.create({
         trigger: view.value.querySelector('.scroll-helper'),
@@ -104,7 +115,6 @@ export default {
 .scroll-helper {
   overflow: hidden;
   height: 100vh;
-  // background-color: rgba(255, 0, 0, 0.1);
 }
 .gabarit {
   height: 100%;
@@ -114,6 +124,7 @@ export default {
   align-items: center;
   justify-content: flex-start;
   height: 100%;
+  margin-right: -65px; //half gutter
 
 }
 .card {

@@ -192,5 +192,11 @@ a {
 }
 .thumb {
   position: absolute;
+  left: 67.5%;
+  top: 55%;
+  transform: translateY(-50%);
+  img {
+    transform: translateX(-50%);
+  }
 }
 </style>

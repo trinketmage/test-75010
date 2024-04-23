@@ -117,7 +117,8 @@
         "image": "",
         "thumb" : "/assets/images/sticky-1-monster.jpg",
         "rating": "",
-        "date": "2024"
+        "date": "2024",
+        "color": "rgb(82, 32, 31)"
     },
     {
         "id": "film-c-2",
@@ -127,7 +128,8 @@
         "image": "",
         "thumb" : "/assets/images/sticky-3-past.jpg",
         "rating": "",
-        "date": "2024"
+        "date": "2024",
+        "color": "rgb(96, 56, 69)"
     },
     {
         "id": "film-c-3",
@@ -137,6 +139,7 @@
         "image": "",
         "thumb" : "/assets/images/sticky-3-anatomy.jpg",
         "rating": "",
-        "date": "2024"
+        "date": "2024",
+        "color": "rgb(42, 53, 100)"
     }
 ]

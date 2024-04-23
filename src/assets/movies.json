@@ -121,17 +121,6 @@
         "color": "rgb(82, 32, 31)"
     },
     {
-        "id": "film-c-2",
-        "title": "PAST LIVES",
-        "slug": "past-lives",
-        "description": "",
-        "image": "",
-        "thumb" : "/assets/images/sticky-3-past.jpg",
-        "rating": "",
-        "date": "2024",
-        "color": "rgb(96, 56, 69)"
-    },
-    {
         "id": "film-c-3",
         "title": "ANATOMY OF A FALL",
         "slug": "anatomy-of-a-fall",
@@ -141,5 +130,16 @@
         "rating": "",
         "date": "2024",
         "color": "rgb(42, 53, 100)"
+    },
+    {
+        "id": "film-c-2",
+        "title": "PAST LIVES",
+        "slug": "past-lives",
+        "description": "",
+        "image": "",
+        "thumb" : "/assets/images/sticky-3-past.jpg",
+        "rating": "",
+        "date": "2024",
+        "color": "rgb(96, 56, 69)"
     }
 ]

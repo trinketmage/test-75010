@@ -2,3 +2,16 @@
     height: 100vh;
     position: relative;
 }
+
+.tag {
+    font-size: 24px;
+    & + h1 {
+        margin-top: 20px;
+    }
+}
+
+h1 {
+    font-size: 120px;
+    font-weight: bold;
+    max-width: 10em;
+}

@@ -9,29 +9,39 @@
           top: i * 100 + 'vh',
         }"
       ></div>
-    <div class="scroll-helper  proximity-scroll-snapping">
-      <div
-        v-for="({ id, title }) in movies"
-        :key="id"
-      >
-      <!-- <div
-        class="card "
-        v-for="({ id, color, title }) in movies"
-        :key="id"
-        :style="{
-          backgroundColor: color
-        }"
-      > -->
-      {{ title }}
+    <div class="scroll-helper">
+      <div class="gabarit">
+        <div class="wrapper">
+          <div
+            v-for="({ id, title, description, rating }) in movies"
+            :key="id"
+            class="details"
+          >
+            <!-- <div
+              class="card "
+              v-for="({ id, color, title }) in movies"
+              :key="id"
+              :style="{
+                backgroundColor: color
+              }"
+            > -->
+            <h3>{{ title }}</h3>
+            <span class="rating">{{ rating }}/10</span>
+            <div class="description">{{ description }}</div>
+            <a>PICK OF THE MONTH</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Movies from "@/assets/movies.json";
-import { ref, onMounted, onUnmounted } from "vue";
+import gsap from "@gsap/shockingly";
 import ScrollTrigger from "@gsap/shockingly/ScrollTrigger";
+import { ref, onMounted, onUnmounted } from "vue";
+
+import Movies from "@/assets/movies.json";
 
 export default {
   setup() {
@@ -51,6 +61,14 @@ export default {
 
     onMounted(() => {
 
+      const animation = gsap.timeline();
+
+      animation.to(view.value.querySelector('.wrapper'), {
+        xPercent: -200,
+        ease: 'linear',
+        duration: 2
+      }, 'a')
+
       st = ScrollTrigger.create({
         trigger: view.value.querySelector('.scroll-helper'),
         start: "top top", 
@@ -58,8 +76,13 @@ export default {
         pin: true,
         scrub: true,
         markers: true,
-        snap: [0, 0.5, 1]
-        // animation,
+        snap: {
+          snapTo: [0, 0.5, 1],
+          duration: { min: 0.1, max: 1 },
+          delay: 0.0,
+          ease: "power1.inOut",
+        },
+        animation,
       });
     })
 
@@ -83,12 +106,22 @@ export default {
   overflow: hidden;
   height: 100vh;
   background-color: rgba(255, 0, 0, 0.1);
+}
+.gabarit {
+  height: 100%;
+}
+.wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  height: 100%;
+
 }
 .card {
   height: 100vh;
+}
+.details {
+  min-width: 100%;
 }
 .ghost {
   position: absolute;

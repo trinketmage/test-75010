@@ -113,10 +113,10 @@
         "id": "film-c-1",
         "title": "MONSTER",
         "slug": "monster",
-        "description": "",
+        "description": "When her young son Minato starts to behave strangely, his mother feels that there is something wrong. Discovering that a teacher is responsible, she storms into the school demanding to know what's going on. But as the story unfolds through the eyes of the mother, teacher and child, the truth gradually emerges.",
         "image": "",
         "thumb" : "/assets/images/sticky-1-monster.jpg",
-        "rating": "",
+        "rating": "8.6",
         "date": "2024",
         "color": "rgb(82, 32, 31)"
     },
@@ -124,10 +124,10 @@
         "id": "film-c-3",
         "title": "ANATOMY OF A FALL",
         "slug": "anatomy-of-a-fall",
-        "description": "",
+        "description": "A woman is suspected of her husband's murder, and their blind son faces a moral dillema as the sole witness.",
         "image": "",
         "thumb" : "/assets/images/sticky-3-anatomy.jpg",
-        "rating": "",
+        "rating": "8.2",
         "date": "2024",
         "color": "rgb(42, 53, 100)"
     },
@@ -135,10 +135,10 @@
         "id": "film-c-2",
         "title": "PAST LIVES",
         "slug": "past-lives",
-        "description": "",
+        "description": "Nora and Hae Sung two childhood friends, are reunited in New York for one fateful week as they confront notions of destiny, love, and the choices that make a life.",
         "image": "",
         "thumb" : "/assets/images/sticky-3-past.jpg",
-        "rating": "",
+        "rating": "8.4",
         "date": "2024",
         "color": "rgb(96, 56, 69)"
     }

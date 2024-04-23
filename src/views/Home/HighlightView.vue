@@ -25,8 +25,7 @@
                 backgroundColor: color
               }"
             > -->
-            <h3>{{ title }}</h3>
-            <span class="rating">{{ rating }}/10</span>
+            <h3>{{ title }} <span class="rating">{{ rating }}/10</span></h3>
             <div class="description">{{ description }}</div>
             <a>PICK OF THE MONTH</a>
           </div>
@@ -105,7 +104,7 @@ export default {
 .scroll-helper {
   overflow: hidden;
   height: 100vh;
-  background-color: rgba(255, 0, 0, 0.1);
+  // background-color: rgba(255, 0, 0, 0.1);
 }
 .gabarit {
   height: 100%;
@@ -127,5 +126,20 @@ export default {
   position: absolute;
   z-index: -1;
   width: 100%;
+}
+h3 {
+  font-size: 64px;
+  font-weight: bold;
+  .rating {
+    font-weight: 300;
+    font-size: 16px;
+  }
+}
+.description {
+  max-width: 23.5em;
+  font-size: 24px;
+  color: var(--ivory);
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 </style>

@@ -89,6 +89,9 @@ export default {
       }, 'a')
       animation.to(thumbs[0], {
         y: '-100vh',
+        rotation: 30,
+        xPercent: -40, 
+        z: 200,
         ease: 'linear',
         duration: 1
       }, 'a')
@@ -104,6 +107,9 @@ export default {
       }, 'a+=1')
       animation.to(thumbs[1], {
         y: '-100vh',
+        rotation: 30,
+        xPercent: -40, 
+        z: 200,
         ease: 'linear',
         duration: 1
       }, 'a+=1')
@@ -144,6 +150,7 @@ export default {
   overflow: hidden;
   height: 100vh;
   overflow: hidden;
+  perspective: 800px;
 }
 .gabarit {
   height: 100%;
@@ -192,9 +199,9 @@ a {
 }
 .thumb {
   position: absolute;
-  left: 67.5%;
-  top: 55%;
-  transform: translateY(-50%);
+  left: 66.5%;
+  top: 54%;
+  transform: translateY(-50%) rotate(3.5deg);
   img {
     transform: translateX(-50%);
   }

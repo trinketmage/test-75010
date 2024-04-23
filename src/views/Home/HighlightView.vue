@@ -1,14 +1,27 @@
 <template>
   <div class="view" ref="view">
-    <div class="scroll-helper">
       <div
-        class="card"
+        class="card ghost"
+        v-for="({ id, color }, i) in movies"
+        :key="id"
+        :style="{
+          backgroundColor: color,
+          top: i * 100 + 'vh',
+        }"
+      ></div>
+    <div class="scroll-helper  proximity-scroll-snapping">
+      <div
+        v-for="({ id, title }) in movies"
+        :key="id"
+      >
+      <!-- <div
+        class="card "
         v-for="({ id, color, title }) in movies"
         :key="id"
         :style="{
           backgroundColor: color
         }"
-      >
+      > -->
       {{ title }}
       </div>
     </div>
@@ -44,7 +57,8 @@ export default {
         end: () => "+=200%",
         pin: true,
         scrub: true,
-        markers: true
+        markers: true,
+        snap: [0, 0.5, 1]
         // animation,
       });
     })
@@ -68,8 +82,17 @@ export default {
 .scroll-helper {
   overflow: hidden;
   height: 100vh;
+  background-color: rgba(255, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .card {
   height: 100vh;
+}
+.ghost {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
 }
 </style>

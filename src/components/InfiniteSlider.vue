@@ -108,7 +108,7 @@ export default {
                     const nx = snapBox(proxyProps("x"));
                     overrideAnimation = gsap.to(proxy, {
                         x: nx,
-                        duration: (Math.abs(nx - proxyProps("x")) / boxWidth) * 0.5, 
+                        duration: (Math.abs(nx - proxyProps("x")) / boxWidth), 
                         ease: "sine.out",
                         onUpdate: () => {
                             animation.progress(wrapProgress(proxyProps("x") / wrapWidth));

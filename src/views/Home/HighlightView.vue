@@ -27,7 +27,7 @@
             > -->
             <h3>{{ title }} <span class="rating">{{ rating }}/10</span></h3>
             <div class="description">{{ description }}</div>
-            <a>PICK OF THE MONTH</a>
+            <a>⭐️ PICK OF THE MONTH</a>
           </div>
         </div>
       </div>
@@ -141,5 +141,9 @@ h3 {
   color: var(--ivory);
   margin-top: 40px;
   margin-bottom: 40px;
+}
+a {
+  font-size: 24px;
+  font-weight: bold;
 }
 </style>

@@ -1,0 +1,25 @@
+@import './reset.scss';
+@import './fonts.scss';
+@import './variables.scss';
+
+:root {
+  background-color: var(--midnight);
+  color: var(--white);
+  font-family: var(--corps-font);
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+::-webkit-scrollbar-track {
+    background: var(--midnight);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--white);
+}
+::selection {
+    color: var(--midnight);
+    background: var(--pinky-ante-midnight);
+}
+
+@import './view.scss';

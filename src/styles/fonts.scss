@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "News Cycle";
+    src: url("@/assets/fonts/NewsCycle-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "News Cycle";
+    src: url("@/assets/fonts/NewsCycle-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --title-font: "News Cycle", sans-serif;
+    --corps-font: "News Cycle", sans-serif;
+}

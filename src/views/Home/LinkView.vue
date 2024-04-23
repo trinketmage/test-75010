@@ -77,7 +77,7 @@ export default {
 }
 .image-helper {
   height: 100%;
-  background-position: 50% 50%;
+  background-position: 50% 36%;
   background-size: cover;
 }
 .label {

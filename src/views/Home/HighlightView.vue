@@ -12,6 +12,16 @@
         }"
       >
       </div>
+      <div
+        v-for="({ id, thumb }, i) in movies"
+        :key="id"
+        class="thumb"
+        :style="{
+          zIndex: 3 - i
+        }"
+      >
+        <img :src="thumb" />
+      </div>
       <div class="gabarit">
         <div class="wrapper">
           <div
@@ -58,6 +68,7 @@ export default {
 
       const details = view.value.querySelectorAll('.details')
       const circles = view.value.querySelectorAll('.circle')
+      const thumbs = view.value.querySelectorAll('.thumb')
       animation.to(view.value.querySelector('.wrapper'), {
         xPercent: -200,
         ease: 'linear',
@@ -76,6 +87,11 @@ export default {
         ease: 'linear',
         duration: 1
       }, 'a')
+      animation.to(thumbs[0], {
+        y: '-100vh',
+        ease: 'linear',
+        duration: 1
+      }, 'a')
       animation.from(details[2], {
         alpha: 0.1,
         ease: 'linear',
@@ -86,6 +102,11 @@ export default {
         ease: 'linear',
         duration: 1
       }, 'a+=1')
+      animation.to(thumbs[1], {
+        y: '-100vh',
+        ease: 'linear',
+        duration: 1
+      }, 'a+=1')
 
       st = ScrollTrigger.create({
         trigger: view.value.querySelector('.scroll-helper'),
@@ -93,7 +114,6 @@ export default {
         end: () => "+=200%",
         pin: true,
         scrub: true,
-        markers: true,
         snap: {
           snapTo: [0, 0.5, 1],
           duration: { min: 0.1, max: 0.5 },
@@ -169,5 +189,8 @@ a {
   left: 50%;
   top: 50%;
   transform: translateX(-50%) translateY(-50%) scale(0);
+}
+.thumb {
+  position: absolute;
 }
 </style>

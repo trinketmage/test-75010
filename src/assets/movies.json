@@ -1,0 +1,142 @@
+[
+    {
+        "id": "film0",
+        "title": "SPIDER-MAN : ACROSS THE SPIDER-VERSE",
+        "slug": "spider-man-across-the-spider-verse",
+        "description": "",
+        "image": "/assets/images/hero.jpg",
+        "thumb" : "",
+        "rating": "",
+        "date": ""
+    },
+    {
+        "id": "film1",
+        "title": "ZONE OF INTEREST",
+        "slug": "zone-of-interest",
+        "description": "",
+        "image": "",
+        "thumb" : "/assets/images/1.jpg",
+        "rating": "",
+        "date": "2024"
+    },
+    {
+        "id": "film2",
+        "title": "PRISCILLA",
+        "slug": "priscilla",
+        "description": "",
+        "image": "",
+        "thumb" : "/assets/images/2.jpg",
+        "rating": "",
+        "date": ""
+    },
+    {
+        "id": "film3",
+        "title": "DUNE: PART TWO",
+        "slug": "dune-part-two",
+        "description": "",
+        "image": "",
+        "thumb" : "/assets/images/3.jpg",
+        "rating": "",
+        "date": "2024"
+    },
+    {
+        "id": "film4",
+        "title": "POOR THINGS",
+        "slug": "poor-things",
+        "description": "",
+        "image": "",
+        "thumb" : "/assets/images/4.jpg",
+        "rating": "",
+        "date": "2024"
+    },
+    {
+        "id": "film5",
+        "title": "ALL OF US STRANGERS",
+        "slug": "all-of-us-strangers",
+        "description": "",
+        "image": "",
+        "thumb" : "/assets/images/5.jpg",
+        "rating": "",
+        "date": "2024"
+    },
+    {
+        "id": "film6",
+        "title": "AMERICAN STRANGERS",
+        "slug": "american-strangers",
+        "description": "",
+        "image": "",
+        "thumb" : "/assets/images/6.jpg",
+        "rating": "",
+        "date": "2024"
+    },
+    {
+        "id": "film7",
+        "title": "THE SNOW SOCIETY",
+        "slug": "the-snow-society",
+        "description": "",
+        "image": "",
+        "thumb" : "/assets/images/7.jpg",
+        "rating": "",
+        "date": "2024"
+    },
+    {
+        "id": "film8",
+        "title": "OPPENHEIMER",
+        "slug": "oppenheimer",
+        "description": "",
+        "image": "",
+        "thumb" : "/assets/images/8.jpg",
+        "rating": "",
+        "date": "2024"
+    },
+    {
+        "id": "film9",
+        "title": "SPACEMAN",
+        "slug": "spaceman",
+        "description": "",
+        "image": "",
+        "thumb" : "/assets/images/9.jpg",
+        "rating": "",
+        "date": "2024"
+    },
+    {
+        "id": "film10",
+        "title": "BOTTOMS",
+        "slug": "bottoms",
+        "description": "",
+        "image": "",
+        "thumb" : "/assets/images/10.jpg",
+        "rating": "",
+        "date": "2024"
+    },
+    {
+        "id": "film-c-1",
+        "title": "MONSTER",
+        "slug": "monster",
+        "description": "",
+        "image": "",
+        "thumb" : "/assets/images/sticky-1-monster.jpg",
+        "rating": "",
+        "date": "2024"
+    },
+    {
+        "id": "film-c-2",
+        "title": "PAST LIVES",
+        "slug": "past-lives",
+        "description": "",
+        "image": "",
+        "thumb" : "/assets/images/sticky-3-past.jpg",
+        "rating": "",
+        "date": "2024"
+    },
+    {
+        "id": "film10",
+        "title": "ANATOMY OF A FALL",
+        "slug": "anatomy-of-a-fall",
+        "description": "",
+        "image": "",
+        "thumb" : "/assets/images/sticky-3-anatomy.jpg",
+        "rating": "",
+        "date": "2024"
+    }
+]

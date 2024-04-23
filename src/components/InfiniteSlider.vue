@@ -97,10 +97,10 @@ export default {
             const { pixelX, pixelY } = ne;
             const delta = pixelX;
             clearTimeout(wheelEventEndTimeout);
-            if (overrideAnimation) {
-                overrideAnimation.kill();
-            }
             if (Math.abs(pixelX) > Math.abs(pixelY)) {
+                if (overrideAnimation) {
+                    overrideAnimation.kill();
+                }
                 e.preventDefault();
                 gsap.set(proxy, { x: proxyProps("x") - delta });
                 animation.progress(wrapProgress(proxyProps("x") / wrapWidth));

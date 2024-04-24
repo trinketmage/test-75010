@@ -243,6 +243,7 @@ a {
   transform: translateY(-50%) rotate(3.5deg);
   img {
     transform: translateX(-50%);
+    width: 21.25vw;
   }
 }
 </style>

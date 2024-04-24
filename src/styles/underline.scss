@@ -1,0 +1,53 @@
+.underline {
+    display: inline-flex;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer
+}
+
+.underline:before {
+    opacity: 0;
+    margin-right: 1px;
+    transform: translateX(100%);
+    transition: opacity 0s .3s,transform .3s
+}
+
+.underline:after,.underline:before {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: var(--white);
+    content: "";
+    will-change: opacity,transform
+}
+
+.underline:after {
+    margin-left: -1px;
+    transform: translateX(-100%);
+    transition: opacity 0s .3s,transform .3s ease
+}
+
+.underline.active:before,.underline.router-link-exact-active:before {
+    opacity: 1;
+    transform: translateX(0)
+}
+
+.underline.active:after,.underline.router-link-exact-active:after {
+    opacity: 0;
+    transform: translateX(0)
+}
+
+@media(hover: hover)and (pointer:fine) {
+    .underline:hover:before {
+        opacity:1;
+        transform: translateX(0)
+    }
+
+    .underline:hover:after {
+        opacity: 0;
+        transform: translateX(0)
+    }
+}

@@ -41,7 +41,6 @@ a {
     padding-bottom: 4px;
 }
 .main-link {
-
     .copy {
         transition: transform .3s ease;
         position: relative;

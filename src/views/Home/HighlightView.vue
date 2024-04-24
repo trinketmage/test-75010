@@ -90,7 +90,11 @@ export default {
         ease: 'linear',
         duration: 1
       }, 'a')
-      animation.to(thumbs[0], {
+      animation.fromTo(thumbs[0], {
+        y: '0vh',
+        rotation: 3.5,
+        xPercent: -5,
+      }, {
         y: '-100vh',
         rotation: 30,
         xPercent: -40, 
@@ -98,32 +102,34 @@ export default {
         ease: 'linear',
         duration: 1
       }, 'a')
-      animation.from(thumbs[1], {
+      animation.fromTo(thumbs[1], {
         y: '5vh',
         rotation: 2,
-        xPercent: 10, 
+        xPercent: 7.5, 
         z: -40,
+      }, {
+        y: '0vh',
+        rotation: 3.5,
+        xPercent: -5,
+        z: 0,
         ease: 'linear',
         duration: 1
       }, 'a')
-
       animation.fromTo(thumbs[2], {
         y: '7.5vh',
         rotation: 0,
         xPercent: 20, 
         z: -60,
-        ease: 'linear',
-        duration: 1,
       }, {
-
         y: '5vh',
         rotation: 2,
-        xPercent: 10, 
+        xPercent: 7.5, 
         z: -40,
         ease: 'linear',
         duration: 1
       }
       , 'a')
+
       animation.from(details[2], {
         alpha: 0.1,
         ease: 'linear',
@@ -145,7 +151,7 @@ export default {
       animation.to(thumbs[2], {
         y: '0vh',
         rotation: 3.5,
-        xPercent: 0, 
+        xPercent: -5,
         z: 0,
         ease: 'linear',
         duration: 1
@@ -234,9 +240,9 @@ h3 {
   position: absolute;
   left: 66.5%;
   top: 50%;
-  transform: translateY(-50%) rotate(3.5deg);
+  transform: translate(0%, 0vh) rotate(3.5deg);
   img {
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%) ;
     width: 21.25vw;
   }
 }

@@ -121,6 +121,9 @@ export default {
     transition: transform 1s ease, opacity 1s linear;
   }
 }
+.tag {
+  display: block;
+}
 
 .v-enter-active {
   transition: opacity 3s ease;

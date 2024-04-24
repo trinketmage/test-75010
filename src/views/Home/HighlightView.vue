@@ -31,7 +31,7 @@
           >
             <h3>{{ title }} <span class="rating">{{ rating }}/10</span></h3>
             <div class="description">{{ description }}</div>
-            <a>⭐️ PICK OF THE MONTH</a>
+            <StarLink />
           </div>
         </div>
       </div>
@@ -44,9 +44,12 @@ import gsap from "@gsap/shockingly";
 import ScrollTrigger from "@gsap/shockingly/ScrollTrigger";
 import { ref, onMounted, onUnmounted } from "vue";
 
+import StarLink from "@/components/StarLink.vue";
+
 import Movies from "@/assets/movies.json";
 
 export default {
+  components: { StarLink },
   setup() {
     let ids = [
       "film-c-1",
@@ -84,8 +87,6 @@ export default {
       }, 'a')
       animation.to(circles[1], {
         scale: 1,
-        xPercent: -50,
-        yPercent: -50,
         ease: 'linear',
         duration: 1
       }, 'a')
@@ -130,8 +131,6 @@ export default {
       }, 'a+=1')
       animation.to(circles[2], {
         scale: 1,
-        xPercent: -50,
-        yPercent: -50,
         ease: 'linear',
         duration: 1
       }, 'a+=1')
@@ -222,11 +221,6 @@ h3 {
   margin-top: 40px;
   margin-bottom: 40px;
 }
-a {
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
-}
 .circle {
   width: calc(hypot(100vh, 100vw ));
   height: calc(hypot(100vh, 100vw ));
@@ -234,7 +228,7 @@ a {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translateX(-50%) translateY(-50%) scale(0);
+  transform: translate(-50%, -50%) scale(0);
 }
 .thumb {
   position: absolute;

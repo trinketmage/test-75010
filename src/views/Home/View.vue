@@ -14,7 +14,7 @@ import { ref } from "vue";
 
 import HeroView from "./HeroView.vue";
 import PopularView from "./PopularView.vue";
-import HighlightView from "./HighlightView.vue";
+import HighlightView from "./HighlightView/index.vue";
 import LinkView from "./LinkView.vue";
 
 export default {

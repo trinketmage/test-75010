@@ -2,7 +2,6 @@
 @import './fonts.scss';
 @import './variables.scss';
 @import './responsive.scss';
-@import './underline.scss';
 
 :root {
   background-color: var(--midnight);
@@ -25,3 +24,5 @@
 }
 
 @import './view.scss';
+@import './typography.scss';
+@import './underline.scss';

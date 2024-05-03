@@ -6,24 +6,6 @@
     margin-right: auto;
 }
 
-.tag {
-    font-size: 24px;
-    & + h1 {
-        margin-top: 20px;
-    }
-}
-
-h1 {
-    font-size: var(--global--font-size-h1);
-    font-weight: bold;
-    max-width: 10em;
-}
-
-h2 {
-    font-size: var(--global--font-size-h2);
-    font-weight: bold;
-}
-
 .gabarit {
     max-width: var(--gabarit);
     margin-left: auto;

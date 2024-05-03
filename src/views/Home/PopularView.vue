@@ -53,7 +53,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-height: 150vw;
+  max-height: 156vw;
 }
 .gabarit + .gabarit {
   margin-top: 100px;

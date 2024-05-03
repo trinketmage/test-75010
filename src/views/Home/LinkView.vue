@@ -86,7 +86,7 @@ export default {
   padding-right: var(--half-gutter);
 
   @include respond-to("xs-down") {
-    height: 150vw;
+    height: 156vw;
   }
 }
 .image-scroller {

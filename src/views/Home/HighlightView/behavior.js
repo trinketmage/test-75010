@@ -9,12 +9,13 @@ export const bind = function (view) {
         isDesktop: `(min-width: ${breakPoint}px) and (prefers-reduced-motion: no-preference)`,
         isMobile: `(max-width: ${breakPoint - 1}px) and (prefers-reduced-motion: no-preference)`
     }, (context) => {
+        if (!view) return;
         if (context.conditions.isDesktop) {
             const animation = gsap.timeline();
-            const details = view.value.querySelectorAll('.details')
-            const circles = view.value.querySelectorAll('.circle')
-            const thumbs = view.value.querySelectorAll('.thumb')
-            animation.to(view.value.querySelector('.wrapper'), {
+            const details = view.querySelectorAll('.details')
+            const circles = view.querySelectorAll('.circle')
+            const thumbs = view.querySelectorAll('.thumb')
+            animation.to(view.querySelector('.wrapper'), {
                 xPercent: -200,
                 ease: 'linear',
                 duration: 2
@@ -100,7 +101,7 @@ export const bind = function (view) {
             }, 'a+=1')
 
             ScrollTrigger.create({
-                trigger: view.value.querySelector('.scroll-helper'),
+                trigger: view.querySelector('.scroll-helper'),
                 start: "top top",
                 end: () => "+=200%",
                 pin: true,

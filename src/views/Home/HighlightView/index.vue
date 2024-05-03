@@ -25,9 +25,12 @@
         <div class="gabarit">
           <div class="wrapper">
             <div
-              v-for="({ id, title, description, rating }) in movies"
+              v-for="({ id, title, description, rating, color }) in movies"
               :key="id"
               class="details"
+                :style="{
+                    '--background-color': color
+                }"
             >
               <h3>{{ title }} <span class="rating">{{ rating }}/10</span></h3>
               <div class="description">{{ description }}</div>
@@ -65,7 +68,7 @@
       const view = ref(null);
   
       onMounted(() => {
-        bind(view);
+        bind(view.value);
       })
   
       return {
@@ -78,30 +81,40 @@
   
   <style lang="scss" scoped>
   .view {
-    height: 300vh;
+    height: auto;
+    @include respond-to("xs") {
+        height: 300vh;
+    }
   }
   .scroll-helper {
-    overflow: hidden;
-    height: 100vh;
-    overflow: hidden;
     perspective: 800px;
+    @include respond-to("xs") {
+        height: 100vh;
+        overflow: hidden;
+    }
   }
   .gabarit {
     height: 100%;
   }
   .wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100%;
-    // margin-right: -65px;
-    margin-right: calc(-50vw + 700px);
+    @include respond-to("xs") {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100%;
+        margin-right: calc(-50vw + var(--half-gabarit));
+    }
   }
   .card {
-    height: 100vh;
+    @include respond-to("xs") {
+        height: 100vh;
+    }
   }
   .details {
     min-width: 100%;
+    @include respond-to("xs-down") {
+        background-color: var(--background-color);
+    }
   }
   h3 {
     font-size: 64px;
@@ -135,6 +148,9 @@
     img {
       transform: translate(-50%, -50%) ;
       width: 21.25vw;
+    }
+    @include respond-to("xs-down") {
+        display: none;
     }
   }
   </style>

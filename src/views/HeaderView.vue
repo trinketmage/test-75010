@@ -23,6 +23,9 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include respond-to("xs-down") {
+        justify-content: flex-end;
+    }
 }
 .ressort-graphique {
     margin-bottom: -0.1em;
@@ -31,6 +34,10 @@ export default {
 .fast-nav {
     display: flex;
     gap: 40px;
+
+    @include respond-to("xs-down") {
+        display: none;
+    }
 }
 a {
     cursor: pointer;

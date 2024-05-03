@@ -89,6 +89,8 @@ export default {
   overflow: hidden;
   padding-bottom: 90px;
   height: calc(100vh - var(--header-size));
+  padding-left: var(--half-gutter);
+  padding-right: var(--half-gutter);
 }
 .image-scroller {
   position: absolute;

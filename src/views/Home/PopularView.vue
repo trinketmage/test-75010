@@ -47,16 +47,20 @@ export default {
 
 <style lang="scss" scoped>
 .view {
-  padding-top: 150px;
-  padding-bottom: 130px;
+  padding-top: calc(var(--gutter) + 20px);
+  padding-bottom: var(--gutter);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-height: 150vw;
 }
 .gabarit + .gabarit {
   margin-top: 100px;
   flex: 1;
+  @include respond-to("xs-down") {
+    margin-top: var(--gutter);
+  }
 }
 .label {
   color: var(--white-50);

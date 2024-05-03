@@ -6,5 +6,19 @@
     --pinky-ante-midnight: #f9e1d5;
     --header-size: 95px;
     --gabarit: 1400px;
+    --half-gutter: 65px;
     --gutter: 130px;
+
+	--global--font-size-h1: 120px;
+	--global--font-size-h2: 62px;
+}
+  
+@include respond-to("xs-down") {
+    :root {
+        --header-size: 70px;
+        --half-gutter: 15px;
+        --gutter: 30px;
+
+	    --global--font-size-h1: 62px;
+    }
 }

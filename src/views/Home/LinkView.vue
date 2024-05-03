@@ -82,6 +82,12 @@ export default {
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding-left: var(--half-gutter);
+  padding-right: var(--half-gutter);
+
+  @include respond-to("xs-down") {
+    height: 150vw;
+  }
 }
 .image-scroller {
   height: 100%;

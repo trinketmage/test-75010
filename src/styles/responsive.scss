@@ -17,6 +17,8 @@
 $breakpoints: (
     'xs': (min-width: 812px),
     'xs-down': (max-width: #{812px - 1}),
+    'lg': (min-width: 1440px),
+    'lg-down': (max-width: #{1440px - 1}),
     'xl': (min-width: 1920px),
     'xl-down': (max-width: #{1920px - 1})
 );

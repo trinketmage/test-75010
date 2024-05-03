@@ -119,7 +119,7 @@
   }
   .details {
     min-width: 100%;
-    padding-right: 40vw;
+    padding-right: 50%;
     .thumb-mobile {
         display: none;
         @include respond-to("xs-down") {

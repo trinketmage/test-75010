@@ -119,6 +119,7 @@
   }
   .details {
     min-width: 100%;
+    padding-right: 40vw;
     .thumb-mobile {
         display: none;
         @include respond-to("xs-down") {
@@ -130,6 +131,7 @@
         }
     }
     @include respond-to("xs-down") {
+        padding-right: 0;
         background-color: var(--background-color);
         padding: var(--header-size) var(--gutter);
     }

@@ -1,15 +1,11 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
   transpileDependencies: true,
-  configureWebpack: {
-    module: {
-      rules: [
-        {
-          test: /\.(glsl|vs|fs|vert|frag)$/,
-          exclude: /node_modules/,
-          use: ["raw-loader", "glslify-loader"]
-        }
-      ]
+  css: {
+    loaderOptions: {
+      scss: {
+        additionalData: `@import "~@/styles/responsive.scss";`
+      }
     }
   },
   chainWebpack: (config) => {

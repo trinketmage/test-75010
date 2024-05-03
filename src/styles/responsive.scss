@@ -1,0 +1,22 @@
+@function strip-unit($value) {
+    @return math.div($value, ($value * 0 + 1));
+}
+
+@mixin respond-to($name) {
+    @if map-has-key($breakpoints, $name) {
+        @media #{inspect(map-get($breakpoints, $name))} {
+            @content;
+        }
+    }
+
+    @else {
+        @warn 'Unfortunately, no value could retieved from `#{$name}`. Please make sure it is defined in the `$breakpoints` map.';
+    }
+}
+
+$breakpoints: (
+    'xs': (min-width: 812px),
+    'xs-down': (max-width: #{812px - 1}),
+    'xl': (min-width: 1920px),
+    'xl-down': (max-width: #{1920px - 1})
+);

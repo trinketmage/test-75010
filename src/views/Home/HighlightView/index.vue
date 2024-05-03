@@ -4,37 +4,38 @@
         class="scroll-helper"
       >
         <div
-          v-for="({ id, color }) in movies"
-          :key="id"
-          class="circle"
-          :style="{
+            v-for="({ id, color }) in movies"
+            :key="id"
+            class="circle"
+            :style="{
             backgroundColor: color
-          }"
+            }"
         >
         </div>
         <div
-          v-for="({ id, thumb }, i) in movies"
-          :key="id"
-          class="thumb"
-          :style="{
+            v-for="({ id, thumb }, i) in movies"
+            :key="id"
+            class="thumb"
+            :style="{
             zIndex: 3 - i
-          }"
+            }"
         >
-          <img :src="thumb" />
+            <img :src="thumb" />
         </div>
         <div class="gabarit">
           <div class="wrapper">
             <div
-              v-for="({ id, title, description, rating, color }) in movies"
+              v-for="({ id, title, description, rating, thumb, color }) in movies"
               :key="id"
               class="details"
                 :style="{
                     '--background-color': color
                 }"
             >
-              <h3>{{ title }} <span class="rating">{{ rating }}/10</span></h3>
-              <div class="description">{{ description }}</div>
-              <StarLink />
+                <img :src="thumb" class="thumb-mobile" />
+                <h3>{{ title }} <span class="rating">{{ rating }}/10</span></h3>
+                <div class="description">{{ description }}</div>
+                <StarLink />
             </div>
           </div>
         </div>
@@ -95,6 +96,9 @@
   }
   .gabarit {
     height: 100%;
+    @include respond-to("xs-down") {
+        padding: 0;
+    }
   }
   .wrapper {
     @include respond-to("xs") {
@@ -112,8 +116,19 @@
   }
   .details {
     min-width: 100%;
+    .thumb-mobile {
+        display: none;
+        @include respond-to("xs-down") {
+            display: block;
+            margin: auto;
+            max-width: 260px;
+            margin-bottom: var(--gutter);
+            transform: rotate(3.5deg);
+        }
+    }
     @include respond-to("xs-down") {
         background-color: var(--background-color);
+        padding: var(--header-size) var(--gutter);
     }
   }
   h3 {

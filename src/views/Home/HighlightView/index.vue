@@ -106,6 +106,9 @@
         align-items: center;
         justify-content: flex-start;
         height: 100%;
+        margin-right: calc(-65px);
+    }
+    @include respond-to("lg") {
         margin-right: calc(-50vw + var(--half-gabarit));
     }
   }

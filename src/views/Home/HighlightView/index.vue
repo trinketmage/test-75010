@@ -40,7 +40,6 @@
   </template>
   
   <script>
-//   import gsap from "@gsap/shockingly";
   import { ref, onMounted } from "vue";
   import { bind } from "./behavior.js";
   
@@ -66,39 +65,6 @@
       const view = ref(null);
   
       onMounted(() => {
-        // let mm = gsap.matchMedia(),
-        //   breakPoint = 800;
-  
-        // mm.add({
-        //   // set up any number of arbitrarily-named conditions. The function below will be called when ANY of them match.
-        //   isDesktop: `(min-width: ${breakPoint}px) and (prefers-reduced-motion: no-preference)`,
-        //   isMobile: `(max-width: ${breakPoint - 1}px) and (prefers-reduced-motion: no-preference)`
-        // }, (context) => {
-  
-        //   console.log("context.conditions", context.conditions.isDesktop, context.conditions.isMobile);
-        //   // context.conditions has a boolean property for each condition defined above indicating if it's matched or not.
-        //       // let { isDesktop, isMobile } = context.conditions,
-        //       //     target = isDesktop ? ".desktop" : ".mobile",
-        //       //     tl = gsap.timeline({
-        //       //       scrollTrigger: {
-        //       //         trigger: ".gray",
-        //       //         scrub: 1,
-        //       //         end: "200%",
-        //       //         pin: true
-        //       //       }
-        //       //     });
-        //       // tl.to(target, {scale: 2, rotation: 360})
-        //       //   .to(target, {scale: 1});
-  
-        //       // // works for non-ScrollTrigger animations too: 
-        //       // gsap.to(target, {backgroundColor: "#2c7ad2", duration: 0.8, ease: "none", repeat: -1, yoyo: true});
-  
-        //   return () => { 
-        //     // optionally return a cleanup function that will be called when the media query no longer matches
-        //     console.log("CLEANUP");
-        //   }
-        // }); 
-
         bind(view);
       })
   

@@ -12,9 +12,9 @@
       </div>
     </div>
     <div class="details">
-      <span class="label">Collection</span>
-      <h2>LE CINÉMA DE DENIS VILLENEUVE</h2>
-      <CallToAction label="DÉCOUVRIR"></CallToAction>
+      <span class="label">{{ $t('context.collection') }}</span>
+      <h2>{{ $t('linkView.title') }}</h2>
+      <CallToAction :label="$t('context.discover')"></CallToAction>
     </div>
   </div>
 </template>

@@ -1,10 +1,10 @@
 <template>
     <div class="header gabarit">
-        <a class="main-link"><RessortGraphique /><span class="copy">MENU</span></a>
+        <a class="main-link"><RessortGraphique /><span class="copy">{{ $t('context.menu') }}</span></a>
         <div class="fast-nav">
-            <a class="underline">POPULAR</a>
-            <a class="underline">NOW SHOWING</a>
-            <a class="underline">WATCHLIST</a>
+            <a class="underline">{{ $t('context.popular') }}</a>
+            <a class="underline">{{ $t('context.nowShowing') }}</a>
+            <a class="underline">{{ $t('context.watchlist') }}</a>
         </div>
     </div>
 </template>

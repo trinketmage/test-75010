@@ -1,8 +1,8 @@
 <template>
   <div class="view">
     <div class="gabarit">
-      <h2>POPULAR RELEASES</h2>
-      <span class="label">This week's top TV and movies</span>
+      <h2>{{ $t('popularReleases.title') }}</h2>
+      <span class="label">{{ $t('popularReleases.subtitle') }}</span>
     </div>
     <div class="gabarit">
       <InfiniteSlider :movies="movies"></InfiniteSlider>

@@ -1,0 +1,19 @@
+{
+    "context": {
+        "menu": "MENU",
+        "discover": "DISCOVER",
+        "collection": "Collection",
+        "pickOfTheMonth": "PICK OF THE MONTH",
+        "newArrival": "NEW ARRIVAL",
+        "popular": "POPULAR",
+        "nowShowing": "NOW SHOWING",
+        "watchlist": "WATCHLIST"
+    },
+    "popularReleases": {
+        "title": "POPULAR RELEASES",
+        "subtitle": "This week's top TV and movies"
+    },
+    "linkView": {
+        "title": "LE CINÉMA DE DENIS VILLENEUVE"
+    }
+}

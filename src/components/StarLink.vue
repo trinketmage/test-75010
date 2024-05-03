@@ -1,6 +1,6 @@
 <template>
     <a class="star-link" @click="handleClick" ref="link">
-        ⭐️ <span class="label">PICK OF THE MONTH</span>
+        ⭐️ <span class="label">{{ $t('context.pickOfTheMonth') }}</span>
     </a>
 </template>
 
